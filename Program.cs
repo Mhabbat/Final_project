@@ -1,19 +1,24 @@
-﻿Console.WriteLine("Введите число a");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число b");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число c");
-int c = Convert.ToInt32(Console.ReadLine());
+﻿string[] array1 = new string[5] {"Он", "Я", "Хорошие ", "2", "друзья!"};
+string[] array2 = new string[array1.Length];
+void SecondArrayWithIF(string[] array1, string[] array2)
 {
-    if(a < b +c)
-    Console.WriteLine("Треугольник существует ");
-    else
-        if(b < a + c)
-    Console.WriteLine("Треугольник существует ");
-    
-    else if(c < a + b)
-    Console.WriteLine("Треугольник существует ");
-    else
-    Console.WriteLine("Треугольник не существует ");
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+    if(array1[i].Length <= 3)
+        {
+        array2[count] = array1[i];
+        count++;
+        }
+    }
 }
-Console.WriteLine(" ");
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+SecondArrayWithIF(array1, array2);
+PrintArray(array2);
